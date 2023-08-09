@@ -47,26 +47,4 @@ theSelect.addEventListener("change", ()=>{
            
         }
      
-        async function makeAllCards(){
-            
-            let html = ``
-            let countries = await fetch("https://restcountries.com/v2/all?fields=name,capital,flags,timezones,population")
-            let data = countries.json()
-            for(i=0; i< countries.length ; i++){
-                html += 
-                `
-                <div class="col-3">
-                <div class="card w-100"  id="countryCard">
-                <img src="${data[0].flags.png}" class="card-img-top" alt="${data[0].flags.alt}">
-                <div class="card-body ">
-                    <p class="card-text">Capital: ${data[[0]].capital}.</p>
-                    <p class="card-text">Population: ${data[0].population}.</p>
-                    <p class="card-text">Time zone : ${data[0].timezones[0]}.</p>
-                     </div>
-                  </div>
-            </div>
-                `
-
-
-            }
-        }
+        
